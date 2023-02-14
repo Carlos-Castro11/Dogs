@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --black: #333;
+  --gold: #fb1;
+  --brown: #764701;
+  --light-yellow: #fea;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: "Spectral", georgia;
+  margin: 0px;
+  color: var(--black);
+  font-family: var(--type-first);
+  padding-top: 4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: var(--black);
+}
+
+::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  position: relative;
+  z-index: 1;
+  margin: 1rem 0;
+}
+
+.title::after {
+  content: "";
+  background-color: var(--gold);
+  height: 20px;
+  width: 20px;
+  border-radius: 0.4rem;
+  position: absolute;
+  left: -5px;
+  bottom: 5px;
+  display: block;
+  z-index: -1;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
