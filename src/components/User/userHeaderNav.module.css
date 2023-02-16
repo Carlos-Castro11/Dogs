@@ -37,3 +37,26 @@
 .nav a:global(.active) svg > * {
   fill: var(--gold);
 }
+
+.mobileButton {
+  background: #eee;
+  border-radius: 0.2rem;
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.mobileButton::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: currentColor;
+  width: 1.2rem;
+  box-shadow: 0px -6px 0px currentColor, 0px 6px 0px currentColor;
+}

@@ -10,7 +10,7 @@ import UserStats from "./UserStats";
 
 const User = () => {
   return (
-    <section className="container">
+    <section className={`${styles.user} container`}>
       <UserHeader />
       <Routes>
         <Route path="/" element={<Feed />} />
