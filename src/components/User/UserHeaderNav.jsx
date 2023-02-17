@@ -13,29 +13,35 @@ import { UserContext } from "../../UserContext";
 const UserHeaderNav = () => {
   const { userLogout } = React.useContext(UserContext);
   const mobile = useMedia("(max-width: 40rem)");
-  const [mobileMenu, setmobileMenu] = React.useState(false);
+  const [mobileMenu, setMobileMenu] = React.useState(false);
 
   return (
     <>
       {mobile && (
         <button
           aria-label="menu"
-          className={styles.mobileButton}
+          className={`${styles.mobileButton} ${
+            mobileMenu && styles.mobileMenuActive
+          }`}
           onClick={() => {
-            setmobileMenu(!mobileMenu);
+            setMobileMenu(!mobileMenu);
           }}
         ></button>
       )}
-      <nav className={styles.nav}>
-        <NavLink to="/account" end>
+      <nav
+        className={`${mobile ? styles.navMobile : styles.nav} ${
+          mobileMenu && styles.navMobileActive
+        }`}
+      >
+        <NavLink to="/account" end onClick={() => setMobileMenu(false)}>
           <MyPhotos />
           {mobile && "Minhas Fotos"}
         </NavLink>
-        <NavLink to="/account/stats">
+        <NavLink to="/account/stats" onClick={() => setMobileMenu(false)}>
           <Stats />
           {mobile && "Estatísticas"}
         </NavLink>
-        <NavLink to="/account/post">
+        <NavLink to="/account/post" onClick={() => setMobileMenu(false)}>
           <AddPhoto />
           {mobile && "Adicionar Foto"}
         </NavLink>
