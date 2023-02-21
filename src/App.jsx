@@ -11,7 +11,10 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./components/Login/Login";
 import User from "./components/User/User";
+import Photo from "./components/Photo/Photo";
 import ProtectedRoute from "./components/Helper/ProtectedRoute";
+import UserProfile from "./components/User/UserProfile";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="photo/:id" element={<Photo />} />
+            <Route path="profile/:user" element={<UserProfile />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </UserStorage>
